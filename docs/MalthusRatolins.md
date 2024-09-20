@@ -1,9 +1,4 @@
----
-layout: page
-author: Jordi Villà-Freixa
-title: "Tema 1. Model Malthusià (Ratolins)"
-permalink: /Tema1-Malthus
----
+
 
 :::: par
 ::: flushleft
@@ -168,3 +163,10 @@ on; hold off; saveas(gcf, '../figures/MalthusRatolins.png');
 ::: center
 ![image](figure_0.png){width="\\ifdim\\linewidth>40.8429503261415em 40.8429503261415em\\else\\linewidth\\fi"}
 :::
+
+---
+layout: page
+author: Jordi Villà-Freixa
+title: "Tema 1. Model Malthusià (Ratolins)"
+permalink: /Tema1-Malthus
+---
