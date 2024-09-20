@@ -1,5 +1,6 @@
 ---
 layout: page
+author: Jordi Villà-Freixa
 title: "Tema 0. Models Matemàtics en Biologia"
 permalink: /Tema0
 ---
