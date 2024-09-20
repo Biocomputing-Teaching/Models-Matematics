@@ -63,7 +63,6 @@ On, a part dels parametres definits mes amunt:
 -  $A=20$ (aportació externa constant de ratolins per any). 
 
 En aquest cas, enlloc d'usar la formula basica, mostrarem com construir un proces iteratu per a cercar el valor desitjat:
-
 ```matlab
 % Paràmetres inicials
 P0 = 100;        % Població inicial
