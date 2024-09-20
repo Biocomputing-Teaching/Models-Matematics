@@ -1,3 +1,10 @@
+---
+layout: page
+author: Jordi Villà-Freixa
+title: "Tema 1. Model Malthusià (Ratolins)"
+permalink: /Tema1-Malthus
+---
+
 :::: par
 ::: flushleft
 **Cas pràctic: Quan la població de ratolins arribarà a 1 milió?**
