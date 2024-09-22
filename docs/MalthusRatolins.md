@@ -28,6 +28,7 @@ On:
 -  $P(t)=1.000.000$ (la població objectiu és d'1 milió de ratolins), 
 -  $P(0)=100$ (població inicial), 
 -  $r=0,3$ (taxa de creixement natural anual del 30%). 
+
 ```matlab
 % Paràmetres inicials
 P0 = 100;        % Població inicial
