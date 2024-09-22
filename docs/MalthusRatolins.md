@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 author: Jordi Villà-Freixa
 title: MalthusRatolins
 permalink: /MalthusRatolins

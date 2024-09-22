@@ -1,3 +1,6 @@
+---
+---
+<!DOCTYPE html>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   tex2jax: {
@@ -8,3 +11,26 @@ MathJax.Hub.Config({
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if page.title %}
+      <title>CawCannon | {{ page.title }}</title>
+    {% else %}
+      <title>CawCannon</title>
+    {% endif %}
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Prompt:wght@700&display=swap" rel="stylesheet">
+  </head>
+<body class="page">
+  {% include nav.html %}
+    <main class="main-content">
+      <div class="container">
+        <div class="page-content">
+          {{ content }}
+        </div>
+    </main>
+    {% include footer.html %}
+</body>
+</html>
