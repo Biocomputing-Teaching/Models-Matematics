@@ -3,6 +3,7 @@ theme: jekyll-theme-minimal
 safe: true
 source: docs
 incremental: false
+layouts_dir: _layouts
 highlighter: rouge
 gist:
   noscript: false
