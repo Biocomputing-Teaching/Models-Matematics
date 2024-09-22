@@ -6,6 +6,9 @@ permalink: /MalthusRatolins
 ---
 
 
+**\# Model exponencial**
+
+
 **Cas pràctic: Quan la població de ratolins arribarà a 1 milió?**
 
 
@@ -31,6 +34,14 @@ On:
 
 ```matlab
 % Paràmetres inicials
+pwd()
+```
+
+```matlabTextOutput
+ans = '/Users/jordivilla/GitHub/Classes/Matematiques-Bio/code'
+```
+
+```matlab
 P0 = 100;        % Població inicial
 r = 0.30;        % Taxa de creixement natural (30%)
 P_target = 1e6;  % Objectiu de població (1 milió)
@@ -159,7 +170,8 @@ figure;
 scatter(t, P_no_A, 'b'); % Corba sense aportacions externes
 hold on;
 scatter(t, P_with_A, 'r'); % Corba amb aportacions externes
-yline(P_target, '--k', 'Objectiu de 1 Milió'); % Línia horitzontal per l'objectiu
+yl=yline(P_target, '--k', 'Objectiu de 1 Milió'); % Línia horitzontal per l'objectiu
+yl.LabelHorizontalAlignment = 'center';
 xlabel('Temps (anys)');
 ylabel('Població');
 title('Evolució de la Població de Ratolins');
