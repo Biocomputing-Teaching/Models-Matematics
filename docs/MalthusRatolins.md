@@ -5,8 +5,6 @@ title: MalthusRatolins
 permalink: /MalthusRatolins
 ---
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
 **Cas pràctic: Quan la població de ratolins arribarà a 1 milió?**
 
 
