@@ -5,19 +5,6 @@ title: MalthusRatolins
 permalink: /MalthusRatolins
 ---
 
-<html lang="en">
-<body class="page">
-  {% include head.html %}
-    <main class="main-content">
-      <div class="container">
-        <div class="page-content">
-          {{ content }}
-        </div>
-    </main>
-    {% include footer.html %}
-</body>
-</html>
-
 **Cas pràctic: Quan la població de ratolins arribarà a 1 milió?**
 
 
