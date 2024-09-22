@@ -4,6 +4,18 @@ author: Jordi Villà-Freixa
 title: MalthusRatolins
 permalink: /MalthusRatolins
 ---
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<div class="hero">
+    <h1 class="hero__header dark-orange">{{ site.title }}</h1>
+</div>
 
 **Cas pràctic: Quan la població de ratolins arribarà a 1 milió?**
 
