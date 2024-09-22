@@ -6,19 +6,12 @@ permalink: /MalthusRatolins
 ---
 
 # **1.1 Models Unidimensional. Model exponencial**
-<a name="beginToc"></a>
-
-## Table of Contents
-<a name="endToc"></a>
+\matlabtableofcontents
 
 **Algunes instruccions preliminars:**
 
 ```matlab
 startup
-```
-
-```matlabTextOutput
-ans = '/Users/jordivilla/GitHub/Classes/Matematiques-Bio/code'
 ```
 
 ## **Cas pràctic: Quan la població de ratolins arribarà a 1 milió?**
@@ -107,6 +100,8 @@ grid on;  % Afegeix quadrícula
 hold off;  % Allibera la figura per evitar superposicions
 ```
 
+![figure_0.png](MalthusRatolins_media/figure_0.png)
+
 Qüestió: Què succeeix si $R<0$ ?
 
 
@@ -136,8 +131,6 @@ legend('show');  % Mostra la llegenda
 grid on;  % Afegeix quadrícula
 hold off;  % Allibera la figura per evitar superposicions
 ```
-
-![figure_0.png](MalthusRatolins_media/figure_0.png)
 
 ![figure_1.png](MalthusRatolins_media/figure_1.png)
 
@@ -295,51 +288,50 @@ P_t = P0;        % Població inicial
 
 % Iterar fins arribar a la població objectiu
 while P_t < P_target
-    t = t + 1;  % Incrementar el temps
-    P_t = P_t * (1 + r) + A % Càlcul de la població
+    t = t + 1; 
+    P_t = P_t * (1 + r) + A; % Càlcul de la població
+    fprintf('t=%d P_t=%d\n',t,P_t)
 end
 ```
 
 ```matlabTextOutput
-P_t = 150
-P_t = 215
-P_t = 299.5000
-P_t = 409.3500
-P_t = 552.1550
-P_t = 737.8015
-P_t = 979.1420
-P_t = 1.2929e+03
-P_t = 1.7007e+03
-P_t = 2.2310e+03
-P_t = 2.9203e+03
-P_t = 3.8163e+03
-P_t = 4.9813e+03
-P_t = 6.4956e+03
-P_t = 8.4643e+03
-P_t = 1.1024e+04
-P_t = 1.4351e+04
-P_t = 1.8676e+04
-P_t = 2.4299e+04
-P_t = 3.1608e+04
-P_t = 4.1111e+04
-P_t = 5.3464e+04
-P_t = 6.9523e+04
-P_t = 9.0400e+04
-P_t = 1.1754e+05
-P_t = 1.5282e+05
-P_t = 1.9869e+05
-P_t = 2.5832e+05
-P_t = 3.3583e+05
-P_t = 4.3660e+05
-P_t = 5.6760e+05
-P_t = 7.3790e+05
-P_t = 9.5929e+05
-P_t = 1.2471e+06
+t=1 P_t=150
+t=2 P_t=215
+t=3 P_t=2.995000e+02
+t=4 P_t=4.093500e+02
+t=5 P_t=5.521550e+02
+t=6 P_t=7.378015e+02
+t=7 P_t=9.791420e+02
+t=8 P_t=1.292885e+03
+t=9 P_t=1.700750e+03
+t=10 P_t=2.230975e+03
+t=11 P_t=2.920267e+03
+t=12 P_t=3.816348e+03
+t=13 P_t=4.981252e+03
+t=14 P_t=6.495627e+03
+t=15 P_t=8.464316e+03
+t=16 P_t=1.102361e+04
+t=17 P_t=1.435069e+04
+t=18 P_t=1.867590e+04
+t=19 P_t=2.429867e+04
+t=20 P_t=3.160827e+04
+t=21 P_t=4.111075e+04
+t=22 P_t=5.346398e+04
+t=23 P_t=6.952318e+04
+t=24 P_t=9.040013e+04
+t=25 P_t=1.175402e+05
+t=26 P_t=1.528222e+05
+t=27 P_t=1.986889e+05
+t=28 P_t=2.583155e+05
+t=29 P_t=3.358302e+05
+t=30 P_t=4.365993e+05
+t=31 P_t=5.675991e+05
+t=32 P_t=7.378988e+05
+t=33 P_t=9.592884e+05
+t=34 P_t=1.247095e+06
 ```
 
 ```matlab
-
-% Mostrar el resultat
 fprintf('Amb aportacions externes, la població arribarà a 1 milió en %d anys.\n', t);
 ```
 
@@ -386,7 +378,10 @@ title('Evoluci\''o de la Poblaci\''o de Ratolins');
 legend('Sense Aportacions Externes', 'Amb Aportacions Externes');
 grid on;
 hold off;
-%saveas(gcf, '../figures/MalthusRatolins.png');
 ```
 
 ![figure_4.png](MalthusRatolins_media/figure_4.png)
+
+```matlab
+%saveas(gcf, '../figures/MalthusRatolins.png');
+```
