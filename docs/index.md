@@ -1,4 +1,5 @@
 ---
+showheader: true
 layout: default
 title: Home
 ---
