@@ -5,6 +5,14 @@ title: RickerSalmons
 permalink: /RickerSalmons
 ---
 
+# **1.1.1. Models Unidimensionals. Model de Ricker**
+## **Cas: el salmó roig al nord del pacífic**
+
+![image_0.png](RickerSalmons_media/image_0.png)
+
+
+El salmó roig, als rius del nord del Pacífic, fa una posta cada 4 anys. Si en tres períodes consecutius, $t=0,4,8$ , s'observen poblacions de 0.325, 0.431 i 0.529 milions de salmons, respectivament, és possible trobar els valors de $R$ i $K$ que permetin calcular l'evolució de la població de salmons per un model de Ricker?
+
 
 **Resolució amb Matlab del sistema d'equacions de l'exemple del Model de Ricker dels salmons als rius del nord del Pacífic**
 
@@ -61,7 +69,7 @@ single(ans)
 ```
 
 ```matlabTextOutput
-ans = 1x2 single row vector    
+ans = 1x2 single row vector
     0.5196    0.7116
 
 ```

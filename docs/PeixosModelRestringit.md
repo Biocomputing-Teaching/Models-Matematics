@@ -63,7 +63,7 @@ R = 2;     % Taxa de creixement
 K = 500;    % Capacitat de càrrega
 N0 = 100;    % Població inicial
 t_max = 20;  % Nombre de períodes (temps) per a la simulació
-
+time = 1:t_max;
 ```
 
 Fem les figures aprofitant les funcions definides al final del fitxer
@@ -72,7 +72,7 @@ Fem les figures aprofitant les funcions definides al final del fitxer
 figure;
 % Model Logístic
 subplot(3,1,1);
-plot(time, logistic(R,K,N0,t_max), 'b', 'LineWidth', 2);
+scatter(time, logistic(R,K,N0,t_max), 'b', 'LineWidth', 2);
 title('Model Log\''istic');
 xlabel('Temps');
 ylabel('Poblaci\''o');
@@ -80,7 +80,7 @@ ylim([0 K*1.2]);
 
 % Model de Ricker
 subplot(3,1,2);
-plot(time, ricker(R,K,N0,t_max), 'r', 'LineWidth', 2);
+scatter(time, ricker(R,K,N0,t_max), 'r', 'LineWidth', 2);
 title('Model de Ricker');
 xlabel('Temps');
 ylabel('Poblaci\\''o');
@@ -88,7 +88,7 @@ ylim([0 K*1.2]);
 
 % Model de Beverton-Holt
 subplot(3,1,3);
-plot(time, beverton(R,K,N0,t_max), 'g', 'LineWidth', 2);
+scatter(time, beverton(R,K,N0,t_max), 'g', 'LineWidth', 2);
 title('Model de Beverton-Holt');
 xlabel('Temps');
 ylabel('Poblaci\\''o');
@@ -101,10 +101,10 @@ ylim([0 K*1.2]);
 % Comparació conjunta en un sol gràfic
 figure;
 hold on;
-plot(time, logistic(R,K,N0,t_max), 'b', 'LineWidth', 2);
-plot(time, ricker(R,K,N0,t_max), 'r', 'LineWidth', 2);
-plot(time, beverton(R,K,N0,t_max), 'g', 'LineWidth', 2);
-titol=strcat('Comparaci\\''o dels tres models amb R=',R);
+scatter(time, logistic(R,K,N0,t_max), 'b', 'LineWidth', 2);
+scatter(time, ricker(R,K,N0,t_max), 'r', 'LineWidth', 2);
+scatter(time, beverton(R,K,N0,t_max), 'g', 'LineWidth', 2);
+titol=strcat('Comparaci\''o dels tres models amb R=',num2str(R));
 title(titol,'Interpreter','latex');
 xlabel('Temps');
 ylabel('Poblaci\''o');
@@ -133,7 +133,6 @@ function N_logistic = logistic(R,K,N0,t_max)
     for t = 1:t_max-1
         N_logistic(t+1) = N_logistic(t) * (R - (R-1)*N_logistic(t) / K);
     end
-    time = 1:t_max;
 end
 function N_ricker = ricker(R,K,N0,t_max)
     r=log(R);
@@ -142,7 +141,6 @@ function N_ricker = ricker(R,K,N0,t_max)
     for t = 1:t_max-1    
         N_ricker(t+1) = N_ricker(t) * exp(r * (1 - N_ricker(t) / K));
     end
-    time = 1:t_max;
 end
 function N_beverton_holt = beverton(R,K,N0,t_max)
     N_beverton_holt = zeros(1, t_max);
@@ -150,6 +148,5 @@ function N_beverton_holt = beverton(R,K,N0,t_max)
     for t = 1:t_max-1        
         N_beverton_holt(t+1) = (R * N_beverton_holt(t)) / (1 + ((R-1)*N_beverton_holt(t) / K));
     end
-    time = 1:t_max;
 end
 ```
