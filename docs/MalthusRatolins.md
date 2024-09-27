@@ -24,6 +24,10 @@ permalink: /MalthusRatolins
 # **1.1.1. Models Unidimensionals. Model exponencial**
 \matlabtableofcontents
 
+ {% raw %}
+  $$a^2 + b^2 = c^2$$ --> note that all equations between these tags will not need escaping! 
+ {% endraw %}
+
 **Algunes instruccions preliminars:**
 
 ```matlab
