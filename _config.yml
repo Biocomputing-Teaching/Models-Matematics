@@ -2,6 +2,12 @@ theme: jekyll-theme-minimal
   lsi: false
 safe: true
 source: docs
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
 incremental: false
 layouts_dir: _layouts
 highlighter: rouge
