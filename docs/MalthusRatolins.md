@@ -4,7 +4,7 @@ author: Jordi Villà-Freixa
 title: MalthusRatolins
 permalink: /MalthusRatolins
 ---
-
+<!-- 
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     jax: ["input/TeX", "output/HTML-CSS"],
@@ -17,9 +17,13 @@ permalink: /MalthusRatolins
     //,
     //displayAlign: "left",
     //displayIndent: "2em"
-  });
+  }); -->
+
+<script
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+  type="text/javascript">
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+
 
 
 # **1.1.1. Models Unidimensionals. Model exponencial**
