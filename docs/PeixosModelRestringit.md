@@ -4,8 +4,9 @@ author: Jordi Villà-Freixa
 title: PeixosModelRestringit
 permalink: /PeixosModelRestringit
 ---
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-# **1.1.1. Models Unidimensionals. Moldes de creixement restringit**
+# **1.1.2. Models Unidimensionals. Models de creixement restringit**
 \matlabtableofcontents
 
 **Algunes instruccions preliminars:**
@@ -19,7 +20,7 @@ startup
 
 Suposem que estem estudiant la població de peixos d’una espècie concreta en un llac tancat, on no hi ha migració, és a dir, l'únic factor que afecta el creixement de la població són els naixements i les morts. A mesura que la població augmenta, l’accés als recursos com l’aliment o l’espai disminueix, de manera que la taxa de creixement de la població es veu afectada per la densitat. Com es comportarà la població al llarg del temps?
 
-## Moldes clàssics per al creixement sotmès a restriccions
+## Models clàssics per al creixement sotmès a restriccions
 
 Els models matemàtics **logístic**, de **Ricker** i de  **Beverton\-Holt** són utilitzats per a descriure la dinàmica de poblacions biològiques i com aquestes responen a factors com la densitat de població i els recursos disponibles. Un cas on es podrien comparar aquests tres models seria l’estudi d’una població de peixos en un llac tancat, on la densitat de la població afecta la seva taxa de creixement i les seves dinàmiques.
 

@@ -1,41 +1,13 @@
 ---
-layout: default
+layout: page
 author: Jordi Villà-Freixa
 title: MalthusRatolins
 permalink: /MalthusRatolins
 ---
-<!-- 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ["\\(", "\\)"] ],
-      displayMath: [ ['$$', '$$'], ["\\[", "\\]"] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-    //,
-    //displayAlign: "left",
-    //displayIndent: "2em"
-  }); -->
-
-<script
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-  type="text/javascript">
-</script>
-
-https://jekyllrb.com/docs/layouts/
-
-
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 # **1.1.1. Models Unidimensionals. Model exponencial**
 \matlabtableofcontents
-
- \\[a^2 + b^2 = c^2\\] --> note that all equations between these tags will not need escaping! 
- 
- {% raw %}
-  $$a^2 + b^2 = c^2$$ --> note that all equations between these tags will not need escaping! 
- {% endraw %}
 
 **Algunes instruccions preliminars:**
 

@@ -4,6 +4,7 @@ author: Jordi Villà-Freixa
 title: RickerSalmons
 permalink: /RickerSalmons
 ---
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 # **1.1.1. Models Unidimensionals. Model de Ricker**
 ## **Cas: el salmó roig al nord del pacífic**
@@ -69,7 +70,7 @@ single(ans)
 ```
 
 ```matlabTextOutput
-ans = 1x2 single row vector
+ans = 1x2 single row vector    
     0.5196    0.7116
 
 ```
