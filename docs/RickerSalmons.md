@@ -70,7 +70,7 @@ single(ans)
 ```
 
 ```matlabTextOutput
-ans = 1x2 single row vector    
+ans = 1x2 single row vector
     0.5196    0.7116
 
 ```
