@@ -154,7 +154,7 @@ plot(0:n_years, populations(:, 2), '-o', 'DisplayName', 'Adults', 'Color', 'r');
 plot(0:n_years, populations(:, 3), '-o', 'DisplayName', 'Vells', 'Color', 'g');
 title('Evoluci\''o de la Poblaci\''o de Peixos');
 xlabel('Any');
-ylabel('Població');
+ylabel('Poblaci\''o');
 legend('show');
 grid on;
 hold off;
@@ -172,6 +172,8 @@ ylabel('Proporci\''o');
 set(gca, 'XTickLabel', {'Joves', 'Adults', 'Vells'});
 grid on;
 ```
+
+![figure_1.png](PeixosLeslie_media/figure_1.png)
 
 ## Qüestions
 1.  Millora l'script incloent a la taula la fracció entre la quantitat total d'individus en dos períodes de tempos consecutius, així com la fracció entre individus dels diferents tipus a cada generació.
