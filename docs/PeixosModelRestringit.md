@@ -126,6 +126,202 @@ Crea un fitxer `mlx` a partir d'aquest en el qual:
 4. Exporta les diferents figures en fitxers de tipus `.png` que puguis aprofitar després en qualsevol document de text.
 5. Discuteix els resultats. En concret, comenta quin model pot ser més útil per a espècies amb comportament de creixement estable, i quin per a espècies amb dinàmiques caòtiques o fluctuants, especialment quan les taxes de reproducció són elevades.
 
+## Respostes
+-  Afegeix una funció que et permeti dibuixar també el gràfic per al model exponencial:  **Veure funció** **`N_exp`** **més avall.**  
+-  Genera un gràfic comparatiu dels diferents models en cadascun d'aquests casos: $R=\lbrace 1.2,3\rbrace$ 
+```matlab
+% Paràmetres del model
+
+K = 500;    % Capacitat de càrrega
+N0 = 100;    % Població inicial
+t_max = 20;  % Nombre de períodes (temps) per a la simulació
+time = 1:t_max;
+
+figure;
+
+% Model Exponencial
+R = [1.2 3];     % Taxa de creixement
+for p=1:2
+
+    % cadena de caràcters (string) amb el valor de R per als títols
+    Rval=num2str(R(p));
+
+    subplot(4,2,p);
+    scatter(time, exponencial(R(p),N0,t_max), 'b', 'LineWidth', 2);
+    title(['Model Exponencial amb R=',Rval]);
+    xlabel('Temps');
+    ylabel('Poblaci\''o');
+    xlim([0 t_max]);
+    ylim([0 K*2]);
+    
+    % Model Logístic
+    subplot(4,2,p+2);
+    scatter(time, logistic(R(p),K,N0,t_max), 'b', 'LineWidth', 2);
+    title(['Model Log\''istic amb R=',Rval]);
+    xlabel('Temps');
+    ylabel('Poblaci\''o');
+    ylim([0 K*2]);
+    
+    % Model de Ricker
+    subplot(4,2,p+4);
+    scatter(time, ricker(R(p),K,N0,t_max), 'r', 'LineWidth', 2);
+    title(['Model de Ricker amb R=',Rval]);
+    xlabel('Temps');
+    ylabel('Poblaci\\''o');
+    ylim([0 K*2]);
+    
+    % Model de Beverton-Holt
+    subplot(4,2,p+6);
+    scatter(time, beverton(R(p),K,N0,t_max), 'g', 'LineWidth', 2);
+    title(['Model de Beverton-Holt amb R=',Rval]);
+    xlabel('Temps');
+    ylabel('Poblaci\\''o');
+    ylim([0 K*2]);
+end
+saveas(gcf, '../figures/VariabilitatRDiscrets.png')
+```
+
+![figure_2.png](PeixosModelRestringit_media/figure_2.png)
+
+-  Genera un gràfic comparatiu dels diferents models en cadascun d'aquests casos: $N_0 =\lbrace 200,400,600\rbrace$ 
+```matlab
+% Paràmetres del model
+
+K = 500;    % Capacitat de càrrega
+R = 1.2;     % Taxa de creixement
+t_max = 20;  % Nombre de períodes (temps) per a la simulació
+time = 1:t_max;
+
+figure;
+
+for N0=[200,400,600]
+    % Model Exponencial
+    
+    subplot(2,2,1);
+    scatter(time, exponencial(R,N0,t_max), 'b', 'LineWidth', 2);hold on;
+    title('Model Exponencial');
+    xlim([0 t_max]);
+    ylim([0 K*2]);
+    xlabel('Temps');
+    ylabel('Poblaci\''o');
+
+    % Model Logístic
+    subplot(2,2,2);
+    scatter(time, logistic(R,K,N0,t_max), 'b', 'LineWidth', 2);hold on;
+    title('Model Log\''istic');
+    xlim([0 t_max]);
+    ylim([0 K*2]);
+    xlabel('Temps');
+    ylabel('Poblaci\''o');
+
+    % Model de Ricker
+    subplot(2,2,3);
+    scatter(time, ricker(R,K,N0,t_max), 'r', 'LineWidth', 2);hold on;
+    title('Model de Ricker');
+    xlim([0 t_max]);
+    ylim([0 K*2]);
+    xlabel('Temps');
+    ylabel('Poblaci\''o');
+
+    % Model de Beverton-Holt
+    subplot(2,2,4);
+    scatter(time, beverton(R,K,N0,t_max), 'g', 'LineWidth', 2);hold on;
+    title('Model de Beverton-Holt');
+    xlim([0 t_max]);
+    ylim([0 K*2]);
+    xlabel('Temps');
+    ylabel('Poblaci\''o');
+
+end
+saveas(gcf, '../figures/VariabilitatN0Discrets.png')
+hold off
+```
+
+![figure_3.png](PeixosModelRestringit_media/figure_3.png)
+
+-  Exporta les diferents figures en fitxers de tipus `.png` que puguis aprofitar després en qualsevol document de text:  **he afegit una instrucció** **`saveas(gcf,...)`****després de cada gràfic.** 
+
+-  Discuteix els resultats. En concret, comenta quin model pot ser més útil per a espècies amb comportament de creixement estable, i quin per a espècies amb dinàmiques caòtiques o fluctuants, especialment quan les taxes de reproducció són elevades. 
+
+Per a respondre la pregunta de forma preliminar és útil observar el comportament dels tres models que posen límits al creixement (logístic, Ricker i Beverton\-Holt). Mirem què els passa si usem una població inicial molt més gran que $K$ i diferents valors de $R$ . Clarament, el model logístic presenta problemes d'estabilitat, que es van solucionant parcialment al Ricker i força millor al Beverton\-Holt.
+
+```matlab
+% Paràmetres del model
+clear;
+K = 100;    % Capacitat de càrrega
+N0 = 200;    % Població inicial
+t_max = 20;  % Nombre de períodes (temps) per a la simulació
+time = 1:t_max;
+R = [1.2 2 2.5];     % Taxa de creixement
+colors = ['r' 'b' 'g'];
+for p=1:3
+    subplot(1,3,1);
+    plot(time, logistic(R(p),K,N0,t_max), colors(p), 'LineWidth', 2);hold on;
+    title(['Model Log\''istic']);
+    xlabel('Temps');
+    ylabel('Poblaci\\''o');
+    ylim([0 max(K*2,N0)]);
+
+    subplot(1,3,2);
+    plot(time, ricker(R(p),K,N0,t_max), colors(p), 'LineWidth', 2);hold on;
+    title(['Model de Ricker']);
+    xlabel('Temps');
+    ylabel('Poblaci\\''o');
+    ylim([0 max(K*2,N0)]);
+
+    subplot(1,3,3);
+    plot(time, beverton(R(p),K,N0,t_max), colors(p), 'LineWidth', 2);hold on;
+    title(['Model de Beverton-Holt']);
+    xlabel('Temps');
+    ylabel('Poblaci\\''o');
+    ylim([0 max(K*2,N0)]);
+end
+hold off;
+saveas(gcf, '../figures/fluctuacionsRickerLogistic.png');
+```
+
+![figure_4.png](PeixosModelRestringit_media/figure_4.png)
+
+Finalment, no ho treballarem en aquest document, però en el cas del model de Ricker, per exemple, pots consultar [aquesta pàgina](https://en.wikipedia.org/wiki/Ricker_model) per observar com es genera una bifurcació a mesura que anem canviant el valor de $r$ en el model de Ricker i comprovem el diagrama de la figura:
+
+
+![image_0.png](PeixosModelRestringit_media/image_0.png)
+
+
+De Snehal Shekatkar, CC BY\-SA 4.0, [https://commons.wikimedia.org/w/index.php?curid=135537628](https://commons.wikimedia.org/w/index.php?curid=135537628)
+
+
+Mirem què passa en els casos 
+
+1.  $R=\exp (2)\Leftrightarrow r=2$ ;
+2. $R=\exp (2.5)\Leftrightarrow r=2.5$ i
+3. $R=\exp (3)\Leftrightarrow r=3$ .
+
+En el primer cas, la població tendeix a $K$ , però comença a oscil·lar fortament tot i convergir a aquest valor de $K$ . En el segon, la població es bifurca a dos valors assimptòtics finals (approx $N=170$ i $N=30$ ). Finalment, en el tercer cas, la població tendeix a diversos valors assimptòtics, en una situació de clar caos.
+
+```matlab
+% Paràmetres del model
+clear;
+figure;
+K = 100;    % Capacitat de càrrega
+N0 = 200;    % Població inicial
+t_max = 200;  % Nombre de períodes (temps) per a la simulació
+time = 1:t_max;
+R = [exp(2) exp(2.5) exp(3)];     % Taxa de creixement
+colors = ['r' 'b' 'g'];
+for p=1:3
+    plot(time, ricker(R(p),K,N0,t_max), colors(p), 'LineWidth', 2);hold on;
+    title(['Model de Ricker']);
+    xlabel('Temps');
+    ylabel('Poblaci\\''o');
+    ylim([0 max(K*2,N0)]);
+end
+hold off;
+saveas(gcf, '../figures/chaosRickerLogistic.png');
+```
+
+![figure_5.png](PeixosModelRestringit_media/figure_5.png)
+
 ## Funcions
 ```matlab
 function N_logistic = logistic(R,K,N0,t_max)
@@ -148,6 +344,19 @@ function N_beverton_holt = beverton(R,K,N0,t_max)
     N_beverton_holt(1) = N0;
     for t = 1:t_max-1        
         N_beverton_holt(t+1) = (R * N_beverton_holt(t)) / (1 + ((R-1)*N_beverton_holt(t) / K));
+    end
+end
+
+```
+
+# Respostes:
+```matlab
+
+function N_exp = exponencial(R,N0,t_max)
+    N_exp = zeros(1, t_max);
+    N_exp(1) = N0;
+    for t = 1:t_max-1
+        N_exp(t+1) = N_exp(t) * R;
     end
 end
 ```
