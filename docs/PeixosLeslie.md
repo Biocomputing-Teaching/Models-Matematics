@@ -177,9 +177,12 @@ grid on;
 
 ## Qüestions
 1.  Millora l'script incloent a la taula la fracció entre la quantitat total d'individus en dos períodes de tempos consecutius, així com la fracció entre individus dels diferents tipus a cada generació.
-2. Com evoluciona la població si els individus vells tenen una supervivència del 20%, alhora que els individus joves només del 10%?
-3. En un model amb tres classes d'edat, el comportament asimptòtic de la població ve determinat pel valor propi dominant λ1=1.3λ1�=1.3 i el vector propi associat v=(0.9,0.3,0.18)v=(0.9,0.3,0.18). Quin serà el comportament asimptòtic de la població?
+2. Com evoluciona la població si els individus adults tenen una supervivència del 20%, alhora que els individus joves només del 10%?
+3. En un model amb tres classes d'edat, el comportament asimptòtic de la població ve determinat pel valor propi dominant $\lambda_D =1.3$ i el vector propi associat $v_D =(0.9,0.3,0.18)$ .Quin serà el comportament asimptòtic de la població?
 4. Per estudiar una població d'una determinada espècie, la màxima edat de la qual és de 20 anys, es consideren períodes vitals de 5 anys i es divideix la població en 4 grups d'edat. De l'observació es dedueix que només una quarta part dels individus del primer grup (1\-5 anys) sobreviu fins al següent període de temps; que només la meitat dels del segon grup (6\-10 anys) sobreviuen fins als (11\-15 anys) i només una desena part dels d'aquest últim arriben al darrer grup (16\-20 anys). Així mateix, s'observa que, de mitjana, cada individu del segon grup procrea un nou individu, mentre que els dels grups 3 i 4 procreen 3 i 2 nous individus, respectivament.
 
--  Escriu el model de Leslie per a aquestes dades en forma matricial. 
--  Si inicialment la distribució de la població per grups és de 100, 70, 70 i 40 individus respectivament, determina la distribució que hi haurà d'aquí a 10 anys (recorda que els períodes són de 5 anys). 
+4a) Escriu el model de Leslie per a aquestes dades en forma matricial.
+
+
+4b) Si inicialment la distribució de la població per grups és de 100, 70, 70 i 40 individus respectivament, determina la distribució que hi haurà d'aquí a 10 anys (recorda que els períodes són de 5 anys).
+
