@@ -33,3 +33,85 @@ on apareix el nou paràmetre $m$ per controlar l'efecte de l'eficiència del par
 2. Usant els mateixos paràmetres anteriors i també $m=0.5$ , repeteix els dos gràfics anteriors per al model binomial negatiu. Quina conclusió n'extreus?
 3. Construeix un gràfic de fase (població dels paràsits en funció de la població dels hostes) per als diferents casos. Què observes?
 4. Comprova gràficament l'estabilitat dels dos punts d'equilibri trobats a l'exemple 2.55 dels apunts de models discrets.
+
+## Respostes
+
+**Algunes instruccions preliminars:**
+
+```matlab
+startup
+```
+
+Codi MATLAB per simular el model discret de l'exemple 2.56 dels apunts
+
+```matlab
+% Paràmetres del model
+tmax = 10;  % Temps màxim de simulació
+x0 = 20/3*log(2)+0.01;  % Població inicial d'hostes
+y0 = 10*log(2);  % Població inicial de paràsits
+
+% Inicialització dels vectors de població
+x = zeros(1, tmax);
+y = zeros(1, tmax);
+x(1) = x0;
+y(1) = y0;
+
+% Simulació del sistema discret
+for t = 1:tmax-1
+    x(t+1) = 2*x(t)*exp(-0.1*y(t));
+    y(t+1) = 3*x(t)*(1-exp(-0.1*y(t)));
+end
+
+% Representació gràfica de les poblacions
+figure;
+plot(1:tmax, x, 'b', 1:tmax, y, 'r');
+title('Dinàmica de paràsit-hoste en temps discret');
+xlabel('Temps');
+ylabel('Població');
+legend('Hostes', 'Paràsits');
+
+% Gràfic en fase (Població d'hostes vs paràsits)
+figure;
+plot(x, y, 'k', 'LineWidth', 1.5);
+title('Gràfic en fase: Població d\''Hostes vs Paràsits');
+xlabel('Població d\''Hostes');
+ylabel('Població de Paràsits');
+grid on;
+```
+
+Codi MATLAB per simular el model discret de l'exemple 2.55 dels apunts
+
+```matlab
+% Paràmetres del model
+tmax = 100;  % Temps màxim de simulació
+x0 = 0.1;  % Població inicial d'hostes
+y0 = .01;  % Població inicial de paràsits
+
+% Inicialització dels vectors de població
+x = zeros(1, tmax);
+y = zeros(1, tmax);
+x(1) = x0;
+y(1) = y0;
+
+% Simulació del sistema discret
+for t = 1:tmax-1
+    x(t+1) = y(t);
+    y(t+1) = 0.5*x(t)+y(t)-(y(t)).^2;
+end
+
+% Representació gràfica de les poblacions
+figure;
+plot(1:tmax, x, 'b', 1:tmax, y, 'r');
+title('Dinàmica de paràsit-hoste en temps discret');
+xlabel('Temps');
+ylabel('Població');
+legend('Hostes', 'Paràsits');
+
+% Gràfic en fase (Població d'hostes vs paràsits)
+figure;
+plot(x, y, 'k', 'LineWidth', 1.5);
+title('Gràfic en fase: Població d\''Hostes vs Paràsits');
+xlabel('Població d\''Hostes');
+ylabel('Població de Paràsits');
+grid on;
+```

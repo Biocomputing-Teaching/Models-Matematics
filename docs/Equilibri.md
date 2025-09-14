@@ -21,7 +21,7 @@ Suposem que estem modelant el creixement d'una població de conills en una illa 
 
 ## Solució
 1.  Per tal de trobar els punts d'equilibri ens cal determinar quan $x_{n+1} =f(x_n )$
-2. Per tal de trobar si aquests punts són estables o inestables ens cal veure si al voltant del punt la part de l'esquerra d'aquesta expressió creix més o menys ràpidament que la de la dreta. En altres paraules, si avaluem la derivada de l'expressió $x=f(x)$ obtenim $1=f^{\prime } (x)$ . Això ens diu que si $1<f^{\prime } (x)$ el terme dret de l'equació creix més ràpidament que l'esquerra, cosa que indica que el punt d'equlibri és inestable. El contrari succeeix si $1>f^{\prime } (x)$ , ja que en aquest cas la diagonal té més pendent que la funció.
+2. Per tal de trobar si aquests punts són estables o inestables ens cal veure si al voltant del punt la part de l'esquerra d'aquesta expressió creix més o menys ràpidament que la de la dreta. En altres paraules, si avaluem la derivada de l'expressió $x=f(x)$ obtenim $1=f^{\prime } (x)$ . Això ens diu que si $1<|f^{\prime } (x)|$ el terme dret de l'equació creix més ràpidament que l'esquerra, cosa que indica que el punt d'equlibri és inestable. El contrari succeeix si $1>|f^{\prime } (x)|$ , ja que en aquest cas la diagonal té més pendent que la funció.
 
 ### Model exponencial discret
 
@@ -170,7 +170,7 @@ Això implica que:
 
 La derivada de $f(x)=xe^{r(1-x)}$ és $f^{\prime } (x)=e^{r(1-x)} (1-rx)$ 
 
--  Per $x^* =0$ : Per $x^* =0$ , tenim $f^{\prime } (0)=e^r$ . Si $r>0$ , $f^{\prime } (0)>1$ , així que $x^* =0$ és **inestable**. 
+-  Per $x^* =0$ : Per $x^* =0$ , tenim $f^{\prime } (0)=e^r$ . Si $r>0$ , $|f^{\prime } (0)|>1$ , així que $x^* =0$ és **inestable**. 
 -  Per $x^* =1$ : La derivada en $x^* =1$ és $f^{\prime } (1)=e^0 (1-r)=1-r$ . El punt d'equilibri $x^* =1$ és **estable** si $0<r<2$ i **inestable** si $r>2$ . 
 ```matlab
 % Model de Ricker
