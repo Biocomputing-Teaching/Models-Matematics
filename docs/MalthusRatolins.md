@@ -1,19 +1,21 @@
 ---
 layout: page
 author: Jordi Villà-Freixa
-title: MalthusRatolins
+title: "Model de Malthus: població de ratolins"
 permalink: /MalthusRatolins
 ---
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<a id="H_29E3D6D9"></a>
 
 # **1.1.1. Models Unidimensionals. Model exponencial**
-\matlabtableofcontents
 
 **Algunes instruccions preliminars:**
 
 ```matlab
 startup
 ```
+<a id="H_3C76FF37"></a>
 
 ## **Cas pràctic: Quan la població de ratolins arribarà a 1 milió?**
 
@@ -21,10 +23,11 @@ Anem a calcular quants anys trigarà la població de ratolins en una illa desert
 
 1.  **Sense aportacions externes**: la població creix únicament a causa del creixement natural (30% anual).
 2. **Amb aportacions externes**: cada any arriben **20 ratolins nous** a l'illa, a més del creixement natural.
+<a id="H_800D951D"></a>
 
 ## Creixement exponencial
 
-Abans d'afrontar aquest problema, pensem en un cas més senzill. Imaginem una població de bacteris que es duplica cada 20 minuts, a partir d'una població inicial de $P_0$ . Generam una taula que ens mostri aquestes dades:
+Abans d'afrontar aquest problema, pensem en un cas més senzill. Imaginem una població de bacteris que es duplica cada 20 minuts, a partir d'una població inicial de $P_0$. Generam una taula que ens mostri aquestes dades:
 
 ```matlab
 % Assumim una població inicial
@@ -63,6 +66,7 @@ end
     6  192
 ```
 
+
 Com veiem, el creixement es pot explicar amb una successió exponencial:
 
  $$ x_k =2\cdot x_{k-1} $$ 
@@ -70,6 +74,7 @@ Com veiem, el creixement es pot explicar amb una successió exponencial:
 o bé, si ho expressem a partir del primer valor (expressió recursiva):
 
  $$ x_k =2^k \cdot x_0 $$ 
+<a id="H_4932DA7B"></a>
 
 ### Qüestió: quant de temps ha de passar per tal que la població de bacteris superi les 100 unitats?
 
@@ -92,8 +97,8 @@ y = P0*taxa.^k;  % Càlcul del creixement exponencial
 scatter(k, y, 'DisplayName', ['R = ', num2str(taxa)]);  % Dibuixa la corba
 
 % Configuració del gràfic
-xlabel('Iteraci\''o ( $k$ )');
-ylabel('Creixement ( $P0 \cdot R^k$ )');
+xlabel('Iteraci\''o ($k$)');
+ylabel('Creixement ($P0 \cdot R^k$)');
 xticks(k)
 title('Corba de Creixement Exponencial');
 legend('show');  % Mostra la llegenda
@@ -103,7 +108,7 @@ hold off;  % Allibera la figura per evitar superposicions
 
 ![figure_0.png](MalthusRatolins_media/figure_0.png)
 
-Qüestió: Què succeeix si $R<0$ ?
+Qüestió: Què succeeix si $R<0$?
 
 
 Una fàbrica de paper construïda al costat d'un riu afecta una població de truites, reduint\-ne anualment la seva extensió en un 11%. Si inicialment hi ha 1000 truites, com evoluciona la seva població?
@@ -124,8 +129,8 @@ scatter(k, y, 'DisplayName', ['R = ', num2str(taxa)]);  % Dibuixa la corba
 % Configuració del gràfic
 % "latex" és un potent editor de text que s'usa molt per mostrar
 % nomenclatura matemàtica, també a MATLAB
-xlabel('Iteraci\''o ( $k$ )');
-ylabel('Creixement ( $P0 \cdot R^k$ )');
+xlabel('Iteraci\''o ($k$)');
+ylabel('Creixement ($P0 \cdot R^k$)');
 xticks(k)
 title('Corba de Creixement Exponencial');
 legend('show');  % Mostra la llegenda
@@ -158,8 +163,8 @@ yline(P0, 'DisplayName', 'Creixement nul')
 % Configuració del gràfic
 % "latex" és un potent editor de text que s'usa molt per mostrar
 % nomenclatura matemàtica, també a MATLAB
-xlabel('Iteraci\''o ( $k$ )');
-ylabel('Creixement ( $P0 \cdot R^k$ )');
+xlabel('Iteraci\''o ($k$)');
+ylabel('Creixement ($P0 \cdot R^k$)');
 xticks(k)
 title('Corbes de Creixement Exponencial amb Diferents Taxes');
 legend('show');  % Mostra la llegenda
@@ -195,8 +200,8 @@ for i = 2:numel(k)
 end
 scatter(k, P_t, 'DisplayName', ['R = ', num2str(taxa),'A = ',num2str(A)]);  % Dibuixa la corba
 
-xlabel('Iteraci\''o ( $k$ )');
-ylabel('Creixement ( $P0 \cdot R^k$ )');
+xlabel('Iteraci\''o ($k$)');
+ylabel('Creixement ($P0 \cdot R^k$)');
 xticks(k)
 title('Corba de Creixement Exponencial amb Aportacions anuals');
 legend('show');grid on;hold off; 
@@ -206,7 +211,11 @@ legend('show');grid on;hold off;
 
 Com es pot verificar al gràfic, al cap del temps haurem pogut estabilitzar la població. 
 
+<a id="H_910B0D8E"></a>
+
 ## **Tornem al cas**
+<a id="H_13402BB4"></a>
+
 ### **Opció 1: Sense aportacions externes**
 
 Per aquest escenari, només tenim el creixement natural exponencial, de manera que podem utilitzar la fórmula bàsica del creixement poblacional exponencial:
@@ -240,6 +249,7 @@ Per saber quan tardaríem a tenir el milió de ratolins:
 ans = 35.1052
 ```
 
+
 o, executat tot amb matlab:
 
 ```matlab
@@ -259,6 +269,8 @@ fprintf('Sense aportacions externes, la població arribarà a 1 milió en %.2f a
 ```matlabTextOutput
 Sense aportacions externes, la població arribarà a 1 milió en 35.11 anys.
 ```
+
+<a id="H_3A825505"></a>
 
 ### **Opció 2: Amb aportacions externes**
 
@@ -339,6 +351,7 @@ fprintf('Amb aportacions externes, la població arribarà a 1 milió en %d anys.
 ```matlabTextOutput
 Amb aportacions externes, la població arribarà a 1 milió en 34 anys.
 ```
+
 
 Gràfic del sistema:
 

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ca' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12352d">
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </head>
+  <body class="{{ page.body_class | default: 'content-page' }}">
+    <a class="skip-link" href="#contingut">Salta al contingut</a>
+
+    <header class="site-header">
+      <div class="shell nav-bar">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="Models matemàtics, inici">
+          <span class="brand-mark" aria-hidden="true">Δ</span>
+          <span>Models <strong>matemàtics</strong></span>
+        </a>
+        <nav class="main-nav" aria-label="Navegació principal">
+          <a href="{{ '/' | relative_url }}#sessions">Sessions</a>
+          <a href="{{ '/' | relative_url }}#practiques">MATLAB</a>
+          <a href="{{ '/' | relative_url }}#casos">Casos</a>
+          <a class="nav-cta" href="{{ '/exercicis/ExercicisResoltsBIO.pdf' | relative_url }}">Exercicis resolts</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contingut">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <p class="footer-title">Models matemàtics</p>
+          <p>Material docent per als graus en Biologia i Biotecnologia.</p>
+          <p class="footer-copyright">© {{ site.copyright.start_year }}–{{ 'now' | date: '%Y' }} {{ site.copyright.holder }}.</p>
+          <p class="footer-attribution">La font principal d'aquest material és l'obra docent de Jordi Villà-Freixa. També incorpora materials de Montserrat Corbera i Josep Ayats, a més d'altres fonts que s'indiquen en els apartats corresponents.</p>
+        </div>
+        <div class="footer-links">
+          <a href="{{ '/' | relative_url }}#sessions">Sessions</a>
+          <a href="{{ '/' | relative_url }}#practiques">Pràctiques</a>
+          <a href="https://github.com/{{ site.repository }}">Codi font</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

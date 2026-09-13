@@ -1,24 +1,28 @@
 ---
 layout: page
 author: Jordi Villà-Freixa
-title: DiscretParasitHoste
+title: "Dinàmica paràsit–hoste"
 permalink: /DiscretParasitHoste
 ---
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<a id="H_256a"></a>
 
 # Model discret: Dinàmica paràsit\-hoste
-\matlabtableofcontents
 
-Considerem un model discret on les poblacions del **paràsit** $P_t$ i l'**hoste** $H_t$ evolucionen al llarg del temps en intervals $t$ . Considerem dos models.
+Considerem un model discret on les poblacions del **paràsit** $P_t$ i l'**hoste** $H_t$ evolucionen al llarg del temps en intervals $t$. Considerem dos models.
+
+<a id="H_7888"></a>
 
 ## Model de Nicholson\-Bailey
  $$ \begin{array}{l} H_{k+1} =RH_k e^{-aP_k } \newline P_{k+1} =SH_k \left(1-e^{-aP_k } \right) \end{array} $$ 
 
 on 
 
--  $R$ : constant de creixement dels hostes; 
--  $a$ : eficiència dels paràsits en cercar hostes; i 
--  $S$ : promig d'ous viables dels paràsits per a cada hoste infectat. 
+-  $R$: constant de creixement dels hostes; 
+-  $a$: eficiència dels paràsits en cercar hostes; i 
+-  $S$: promig d'ous viables dels paràsits per a cada hoste infectat. 
+<a id="H_0519"></a>
 
 ## Model bionomial negatiu (Griffiths\-May)
 
@@ -28,11 +32,14 @@ Usant la mateixa notació que en el cas anterior, aquest model representa les po
 
 on apareix el nou paràmetre $m$ per controlar l'efecte de l'eficiència del paràsit.
 
+<a id="H_8789"></a>
+
 ## Qüestions
-1.  Construeix gràfiques per al model de Nicholson\-Bailey usant $R=1.5$ , $S=1$ i $a=0.023$ per als casos: a) $H_0 =30$ i $P_0 =20$ i b) $H_0 =20$ i $P_0 =20$ (Figura 2.8 dels apunts de models discrets). Com interpretes la diferència entre les dues?
-2. Usant els mateixos paràmetres anteriors i també $m=0.5$ , repeteix els dos gràfics anteriors per al model binomial negatiu. Quina conclusió n'extreus?
+1.  Construeix gràfiques per al model de Nicholson\-Bailey usant $R=1.5$, $S=1$ i $a=0.023$ per als casos: a) $H_0 =30$ i $P_0 =20$ i b) $H_0 =20$ i $P_0 =20$ (Figura 2.8 dels apunts de models discrets). Com interpretes la diferència entre les dues?
+2. Usant els mateixos paràmetres anteriors i també $m=0.5$, repeteix els dos gràfics anteriors per al model binomial negatiu. Quina conclusió n'extreus?
 3. Construeix un gràfic de fase (població dels paràsits en funció de la població dels hostes) per als diferents casos. Què observes?
 4. Comprova gràficament l'estabilitat dels dos punts d'equilibri trobats a l'exemple 2.55 dels apunts de models discrets.
+<a id="H_4799"></a>
 
 ## Respostes
 
@@ -69,6 +76,18 @@ title('Dinàmica de paràsit-hoste en temps discret');
 xlabel('Temps');
 ylabel('Població');
 legend('Hostes', 'Paràsits');
+```
+
+![figure_0.png](DiscretParasitHoste_media/figure_0.png)
+
+```matlabTextOutput
+Warning: Error in state of SceneNode.
+String scalar or character vector must have valid interpreter syntax: 
+Població
+
+```
+
+```matlab
 
 % Gràfic en fase (Població d'hostes vs paràsits)
 figure;
@@ -78,6 +97,16 @@ xlabel('Població d\''Hostes');
 ylabel('Població de Paràsits');
 grid on;
 ```
+
+![figure_1.png](DiscretParasitHoste_media/figure_1.png)
+
+```matlabTextOutput
+Warning: Error in state of SceneNode.
+String scalar or character vector must have valid interpreter syntax: 
+Població de Paràsits
+
+```
+
 
 Codi MATLAB per simular el model discret de l'exemple 2.55 dels apunts
 
@@ -106,6 +135,18 @@ title('Dinàmica de paràsit-hoste en temps discret');
 xlabel('Temps');
 ylabel('Població');
 legend('Hostes', 'Paràsits');
+```
+
+![figure_2.png](DiscretParasitHoste_media/figure_2.png)
+
+```matlabTextOutput
+Warning: Error in state of SceneNode.
+String scalar or character vector must have valid interpreter syntax: 
+Població
+
+```
+
+```matlab
 
 % Gràfic en fase (Població d'hostes vs paràsits)
 figure;
@@ -115,3 +156,13 @@ xlabel('Població d\''Hostes');
 ylabel('Població de Paràsits');
 grid on;
 ```
+
+![figure_3.png](DiscretParasitHoste_media/figure_3.png)
+
+```matlabTextOutput
+Warning: Error in state of SceneNode.
+String scalar or character vector must have valid interpreter syntax: 
+Població de Paràsits
+
+```
+

@@ -1,20 +1,22 @@
 ---
 layout: page
 author: Jordi Villà-Freixa
-title: PeixosLeslie
+title: "Matrius de Leslie: població de peixos"
 permalink: /PeixosLeslie
 ---
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<a id="H_660b"></a>
 
 # **1.2. Models Multidimensionals Lineals. Matrius de Leslie**
-\matlabtableofcontents
 
 **Algunes instruccions preliminars:**
 
 ```matlab
 startup
 ```
-
+<a id="H_3C76FF37"></a>
+<a id="H_7B9F4CFA"></a>
 
 ## Cas: Estudi d'una població de peixos dividida per rangs d'edat
 
@@ -174,11 +176,12 @@ grid on;
 ```
 
 ![figure_1.png](PeixosLeslie_media/figure_1.png)
+<a id="H_0873"></a>
 
 ## Qüestions
-1.  Millora l'script incloent a la taula la fracció entre la quantitat total d'individus en dos períodes de tempos consecutius, així com la fracció entre individus dels diferents tipus a cada generació.
+1.  Millora l'script incloent a la taula la fracció entre la quantitat total d'individus en dos períodes de temps consecutius, així com la fracció entre individus dels diferents tipus a cada generació.
 2. Com evoluciona la població si els individus adults tenen una supervivència del 20%, alhora que els individus joves només del 10%?
-3. En un model amb tres classes d'edat, el comportament asimptòtic de la població ve determinat pel valor propi dominant $\lambda_D =1.3$ i el vector propi associat $v_D =(0.9,0.3,0.18)$ .Quin serà el comportament asimptòtic de la població?
+3. En un model amb tres classes d'edat, el comportament asimptòtic de la població ve determinat pel valor propi dominant $\lambda_D =1.3$ i el vector propi associat $v_D =(0.9,0.3,0.18)$.Quin serà el comportament asimptòtic de la població?
 4. Per estudiar una població d'una determinada espècie, la màxima edat de la qual és de 20 anys, es consideren períodes vitals de 5 anys i es divideix la població en 4 grups d'edat. De l'observació es dedueix que només una quarta part dels individus del primer grup (1\-5 anys) sobreviu fins al següent període de temps; que només la meitat dels del segon grup (6\-10 anys) sobreviuen fins als (11\-15 anys) i només una desena part dels d'aquest últim arriben al darrer grup (16\-20 anys). Així mateix, s'observa que, de mitjana, cada individu del segon grup procrea un nou individu, mentre que els dels grups 3 i 4 procreen 3 i 2 nous individus, respectivament.
 
 4a) Escriu el model de Leslie per a aquestes dades en forma matricial.

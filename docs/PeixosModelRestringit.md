@@ -1,32 +1,38 @@
 ---
 layout: page
 author: Jordi Villà-Freixa
-title: PeixosModelRestringit
+title: "Creixement restringit: població de peixos"
 permalink: /PeixosModelRestringit
 ---
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+
+<a id="H_660b"></a>
 
 # **1.1.2. Models Unidimensionals. Models de creixement restringit**
-\matlabtableofcontents
 
 **Algunes instruccions preliminars:**
 
 ```matlab
 startup
 ```
-
+<a id="H_3C76FF37"></a>
+<a id="H_7B9F4CFA"></a>
 
 ## Cas: Estudi d'una població de peixos en un llac
 
 Suposem que estem estudiant la població de peixos d’una espècie concreta en un llac tancat, on no hi ha migració, és a dir, l'únic factor que afecta el creixement de la població són els naixements i les morts. A mesura que la població augmenta, l’accés als recursos com l’aliment o l’espai disminueix, de manera que la taxa de creixement de la població es veu afectada per la densitat. Com es comportarà la població al llarg del temps?
 
+<a id="H_5DF6DC13"></a>
+
 ## Models clàssics per al creixement sotmès a restriccions
 
 Els models matemàtics **logístic**, de **Ricker** i de  **Beverton\-Holt** són utilitzats per a descriure la dinàmica de poblacions biològiques i com aquestes responen a factors com la densitat de població i els recursos disponibles. Un cas on es podrien comparar aquests tres models seria l’estudi d’una població de peixos en un llac tancat, on la densitat de la població afecta la seva taxa de creixement i les seves dinàmiques.
 
+<a id="H_40598765"></a>
+
 ### Model logístic
 
-   El model logístic és una de les primeres aproximacions per modelar el creixement d’una població limitada pels recursos. Descriu una situació on la taxa de creixement d'una població disminueix a mesura que aquesta s'acosta a la capacitat de càrrega $K$ , el límit de població que els recursos poden suportar.
+   El model logístic és una de les primeres aproximacions per modelar el creixement d’una població limitada pels recursos. Descriu una situació on la taxa de creixement d'una població disminueix a mesura que aquesta s'acosta a la capacitat de càrrega $K$, el límit de població que els recursos poden suportar.
 
    $$ N_{t+1} =N_t \left(R-\frac{R-1}{K}N_t \right) $$ 
 
@@ -41,13 +47,17 @@ Els models matemàtics **logístic**, de **Ricker** i de  **Beverton\-Holt** só
 
    \- $K$ és la capacitat de càrrega del sistema.
 
+<a id="H_45EE7B9C"></a>
+
 ### Model de Ricker
 
    El model de Ricker és utilitzat sovint per a analitzar poblacions amb reproducció discreta (com els peixos), on els adults competeixen amb les noves generacions per recursos. El model també inclou una retroalimentació negativa a través de la densitat de població.
 
  $$ N_{t+1} =N_t e^{r\left(1-\frac{N_t }{K}\right)} $$ 
 
-on $R=e^r$ . Aquest model genera fluctuacions i fins i tot caos per a certs valors de $r$ especialment si la taxa de creixement és molt alta.
+on $R=e^r$. Aquest model genera fluctuacions i fins i tot caos per a certs valors de $r$ especialment si la taxa de creixement és molt alta.
+
+<a id="H_4CD11083"></a>
 
 ### Model de Beverton\-Holt
 
@@ -115,6 +125,7 @@ hold off;
 ```
 
 ![figure_1.png](PeixosModelRestringit_media/figure_1.png)
+<a id="H_4E027895"></a>
 
 ## Qüestions
 
@@ -125,6 +136,7 @@ Crea un fitxer `mlx` a partir d'aquest en el qual:
 3. Genera un gràfic comparatiu dels diferents models en cadascun d'aquests casos: $N_0 =\lbrace 200,400,600\rbrace$
 4. Exporta les diferents figures en fitxers de tipus `.png` que puguis aprofitar després en qualsevol document de text.
 5. Discuteix els resultats. En concret, comenta quin model pot ser més útil per a espècies amb comportament de creixement estable, i quin per a espècies amb dinàmiques caòtiques o fluctuants, especialment quan les taxes de reproducció són elevades.
+<a id="H_03b2"></a>
 
 ## Respostes
 -  Afegeix una funció que et permeti dibuixar també el gràfic per al model exponencial:  **Veure funció** **`N_exp`** **més avall.**  
@@ -243,7 +255,7 @@ hold off
 
 -  Discuteix els resultats. En concret, comenta quin model pot ser més útil per a espècies amb comportament de creixement estable, i quin per a espècies amb dinàmiques caòtiques o fluctuants, especialment quan les taxes de reproducció són elevades. 
 
-Per a respondre la pregunta de forma preliminar és útil observar el comportament dels tres models que posen límits al creixement (logístic, Ricker i Beverton\-Holt). Mirem què els passa si usem una població inicial molt més gran que $K$ i diferents valors de $R$ . Clarament, el model logístic presenta problemes d'estabilitat, que es van solucionant parcialment al Ricker i força millor al Beverton\-Holt.
+Per a respondre la pregunta de forma preliminar és útil observar el comportament dels tres models que posen límits al creixement (logístic, Ricker i Beverton\-Holt). Mirem què els passa si usem una població inicial molt més gran que $K$ i diferents valors de $R$. Clarament, el model logístic presenta problemes d'estabilitat, que es van solucionant parcialment al Ricker i força millor al Beverton\-Holt.
 
 ```matlab
 % Paràmetres del model
@@ -293,11 +305,11 @@ De Snehal Shekatkar, CC BY\-SA 4.0, [https://commons.wikimedia.org/w/index.php?c
 
 Mirem què passa en els casos 
 
-1.  $R=\exp (2)\Leftrightarrow r=2$ ;
+1.  $R=\exp (2)\Leftrightarrow r=2$;
 2. $R=\exp (2.5)\Leftrightarrow r=2.5$ i
-3. $R=\exp (3)\Leftrightarrow r=3$ .
+3. $R=\exp (3)\Leftrightarrow r=3$.
 
-En el primer cas, la població tendeix a $K$ , però comença a oscil·lar fortament tot i convergir a aquest valor de $K$ . En el segon, la població es bifurca a dos valors assimptòtics finals (approx $N=170$ i $N=30$ ). Finalment, en el tercer cas, la població tendeix a diversos valors assimptòtics, en una situació de clar caos.
+En el primer cas, la població tendeix a $K$, però comença a oscil·lar fortament tot i convergir a aquest valor de $K$. En el segon, la població es bifurca a dos valors assimptòtics finals (approx $N=170$ i $N=30$ ). Finalment, en el tercer cas, la població tendeix a diversos valors assimptòtics, en una situació de clar caos.
 
 ```matlab
 % Paràmetres del model
@@ -321,6 +333,7 @@ saveas(gcf, '../figures/chaosRickerLogistic.png');
 ```
 
 ![figure_5.png](PeixosModelRestringit_media/figure_5.png)
+<a id="H_006F1B94"></a>
 
 ## Funcions
 ```matlab
@@ -348,6 +361,7 @@ function N_beverton_holt = beverton(R,K,N0,t_max)
 end
 
 ```
+<a id="T_39d5"></a>
 
 # Respostes:
 ```matlab
