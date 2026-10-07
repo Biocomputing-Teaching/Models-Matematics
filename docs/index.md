@@ -184,6 +184,7 @@ body_class: home
       </div>
       <div class="exercise-meta">
         <a class="button" href="{{ '/exercicis/ExercicisResoltsBIO.pdf' | relative_url }}">Consulta el dossier PDF ↗</a>
+        <a class="button" href="{{ '/anivellament/ExercicisAnivellament.pdf' | relative_url }}">Reforç per a l'anivellament ↗</a>
       </div>
     </div>
   </div>
