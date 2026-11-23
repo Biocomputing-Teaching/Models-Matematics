@@ -76,22 +76,38 @@ Any | Joves | Adults | Vells
 
 ```matlab
 for t = 0:n_years
-    fprintf('%4d | %6.2f | %6.2f | %6.2f\n', t, populations(t + 1, 1), populations(t + 1, 2), populations(t + 1, 3));
+    disp([t populations(t + 1, :)])
 end
 ```
 
 ```matlabTextOutput
-   0 | 100.00 |  50.00 |  20.00
-   1 | 120.00 |  80.00 |  30.00
-   2 | 190.00 |  96.00 |  48.00
-   3 | 240.00 | 152.00 |  57.60
-   4 | 361.60 | 192.00 |  91.20
-   5 | 475.20 | 289.28 | 115.20
-   6 | 693.76 | 380.16 | 173.57
-   7 | 933.89 | 555.01 | 228.10
-   8 | 1338.11 | 747.11 | 333.00
-   9 | 1827.23 | 1070.49 | 448.27
-  10 | 2589.25 | 1461.78 | 642.29
+     0   100    50    20
+
+     1   120    80    30
+
+     2   190    96    48
+
+    3.0000  240.0000  152.0000   57.6000
+
+    4.0000  361.6000  192.0000   91.2000
+
+    5.0000  475.2000  289.2800  115.2000
+
+    6.0000  693.7600  380.1600  173.5680
+
+    7.0000  933.8880  555.0080  228.0960
+
+1.0e+03 *
+
+    0.0080    1.3381    0.7471    0.3330
+
+1.0e+03 *
+
+    0.0090    1.8272    1.0705    0.4483
+
+1.0e+03 *
+
+    0.0100    2.5892    1.4618    0.6423
 ```
 
 ```matlab
@@ -123,7 +139,7 @@ dominant_eigenvector = eigenvectors(:, find(diag(eigenvalues) == dominant_eigenv
 dominant_eigenvector = dominant_eigenvector / sum(dominant_eigenvector);
 
 % Mostra els resultats de l'anàlisi
-fprintf('\nAnàlisi dels vectors propis:\n');
+disp('Anàlisi dels vectors propis:')
 ```
 
 ```matlabTextOutput
@@ -131,19 +147,23 @@ Anàlisi dels vectors propis:
 ```
 
 ```matlab
-fprintf('Valor propi dominant: %.4f\n', dominant_eigenvalue);
+dominant_eigenvalue
 ```
 
 ```matlabTextOutput
-Valor propi dominant: 1.3944
+dominant_eigenvalue = 1.3944
 ```
 
 ```matlab
-fprintf('Vector propi dominant (proporcions): [%.4f, %.4f, %.4f]\n', dominant_eigenvector);
+dominant_eigenvector
 ```
 
 ```matlabTextOutput
-Vector propi dominant (proporcions): [0.5493, 0.3151, 0.1356]
+dominant_eigenvector = 3x1
+    0.5493
+    0.3151
+    0.1356
+
 ```
 
 ```matlab

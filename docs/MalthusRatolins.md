@@ -43,27 +43,33 @@ P0 = 3
 k=[0 1 2 3 4 5 6];
 y=[P0 2*P0 2^2*P0 2^3*P0 2^4*P0 2^5*P0 2^6*P0];
 %imprimim la taula
-fprintf('    t    y \n');
+disp('    t    y')
 ```
 
 ```matlabTextOutput
-    t    y 
+    t    y
 ```
 
 ```matlab
 for r=1:7
-    fprintf('%5d%5d\n', k(r), y(r));
+    disp([k(r) y(r)])
 end
 ```
 
 ```matlabTextOutput
-    0    3
-    1    6
-    2   12
-    3   24
-    4   48
-    5   96
-    6  192
+     0     3
+
+     1     6
+
+     2    12
+
+     3    24
+
+     4    48
+
+     5    96
+
+     6   192
 ```
 
 
@@ -263,11 +269,11 @@ P_target = 1e6;  % Objectiu de població (1 milió)
 t = log(P_target / P0) / log(1 + r);
 
 % Mostrar el resultat
-fprintf('Sense aportacions externes, la població arribarà a 1 milió en %.2f anys.\n', t);
+anys_sense_aportacions = t
 ```
 
 ```matlabTextOutput
-Sense aportacions externes, la població arribarà a 1 milió en 35.11 anys.
+anys_sense_aportacions = 35.1052
 ```
 
 <a id="H_3A825505"></a>
@@ -303,53 +309,140 @@ P_t = P0;        % Població inicial
 while P_t < P_target
     t = t + 1; 
     P_t = P_t * (1 + r) + A; % Càlcul de la població
-    fprintf('t=%d P_t=%d\n',t,P_t)
+    disp([t P_t])
 end
 ```
 
 ```matlabTextOutput
-t=1 P_t=150
-t=2 P_t=215
-t=3 P_t=2.995000e+02
-t=4 P_t=4.093500e+02
-t=5 P_t=5.521550e+02
-t=6 P_t=7.378015e+02
-t=7 P_t=9.791420e+02
-t=8 P_t=1.292885e+03
-t=9 P_t=1.700750e+03
-t=10 P_t=2.230975e+03
-t=11 P_t=2.920267e+03
-t=12 P_t=3.816348e+03
-t=13 P_t=4.981252e+03
-t=14 P_t=6.495627e+03
-t=15 P_t=8.464316e+03
-t=16 P_t=1.102361e+04
-t=17 P_t=1.435069e+04
-t=18 P_t=1.867590e+04
-t=19 P_t=2.429867e+04
-t=20 P_t=3.160827e+04
-t=21 P_t=4.111075e+04
-t=22 P_t=5.346398e+04
-t=23 P_t=6.952318e+04
-t=24 P_t=9.040013e+04
-t=25 P_t=1.175402e+05
-t=26 P_t=1.528222e+05
-t=27 P_t=1.986889e+05
-t=28 P_t=2.583155e+05
-t=29 P_t=3.358302e+05
-t=30 P_t=4.365993e+05
-t=31 P_t=5.675991e+05
-t=32 P_t=7.378988e+05
-t=33 P_t=9.592884e+05
-t=34 P_t=1.247095e+06
+     1   150
+
+     2   215
+
+    3.0000  299.5000
+
+    4.0000  409.3500
+
+    5.0000  552.1550
+
+    6.0000  737.8015
+
+    7.0000  979.1420
+
+1.0e+03 *
+
+    0.0080    1.2929
+
+1.0e+03 *
+
+    0.0090    1.7007
+
+1.0e+03 *
+
+    0.0100    2.2310
+
+1.0e+03 *
+
+    0.0110    2.9203
+
+1.0e+03 *
+
+    0.0120    3.8163
+
+1.0e+03 *
+
+    0.0130    4.9813
+
+1.0e+03 *
+
+    0.0140    6.4956
+
+1.0e+03 *
+
+    0.0150    8.4643
+
+1.0e+04 *
+
+    0.0016    1.1024
+
+1.0e+04 *
+
+    0.0017    1.4351
+
+1.0e+04 *
+
+    0.0018    1.8676
+
+1.0e+04 *
+
+    0.0019    2.4299
+
+1.0e+04 *
+
+    0.0020    3.1608
+
+1.0e+04 *
+
+    0.0021    4.1111
+
+1.0e+04 *
+
+    0.0022    5.3464
+
+1.0e+04 *
+
+    0.0023    6.9523
+
+1.0e+04 *
+
+    0.0024    9.0400
+
+1.0e+05 *
+
+    0.0003    1.1754
+
+1.0e+05 *
+
+    0.0003    1.5282
+
+1.0e+05 *
+
+    0.0003    1.9869
+
+1.0e+05 *
+
+    0.0003    2.5832
+
+1.0e+05 *
+
+    0.0003    3.3583
+
+1.0e+05 *
+
+    0.0003    4.3660
+
+1.0e+05 *
+
+    0.0003    5.6760
+
+1.0e+05 *
+
+    0.0003    7.3790
+
+1.0e+05 *
+
+    0.0003    9.5929
+
+1.0e+06 *
+
+    0.0000    1.2471
 ```
 
 ```matlab
-fprintf('Amb aportacions externes, la població arribarà a 1 milió en %d anys.\n', t);
+anys_amb_aportacions = t
 ```
 
 ```matlabTextOutput
-Amb aportacions externes, la població arribarà a 1 milió en 34 anys.
+anys_amb_aportacions = 34
 ```
 
 
